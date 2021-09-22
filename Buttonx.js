@@ -1,57 +1,33 @@
-$('.dl-button').on('click', e => {
+/* 
+Based on a Pablo Stanley (https://medium.com/@pablostanley) design
+*/
 
-    let btn = $(e.currentTarget),
-        label = btn.find('.label'),
-        counter = label.find('.counter');
-
-    if(!btn.hasClass('active') && !btn.hasClass('done')) {
-
-        btn.addClass('active');
-
-        setLabel(label, label.find('.default'), label.find('.state'));
-
-        setTimeout(() => {
-            counter.addClass('hide');
-            counter.animate({
-                width: 0
-            }, 400, function() {
-                label.width(label.find('.state > span').width());
-                counter.removeAttr('style');
-            });
-            btn.removeClass('active').addClass('done');
-        }, getComputedStyle(btn[0]).getPropertyValue('--duration'));
-
-    }
-
-    return false;
-
-});
-
-$('.restart').on('click', e => {
-
-    let btn = $('.dl-button'),
-        label = btn.find('.label'),
-        counter = label.find('.counter');
-
-    setLabel(label, label.find('.state'), label.find('.default'), function() {
-        counter.removeClass('hide');
-        btn.removeClass('done');
-    });
-
-    return false;
-
-});
-
-function setLabel(div, oldD, newD, callback) {
-    oldD.addClass('hide');
-    div.animate({
-        width: newD.outerWidth()
-    }, 200, function() {
-        oldD.removeClass('show hide');
-        newD.addClass('show');
-        div.removeAttr('style');
-        if(typeof callback === 'function') {
-            callback();
-        }
-    });
-}
+var coolbutton = document.getElementById('coolbutton');
+	var inprogress = false;
+	coolbutton.onclick = function(){
+		if (inprogress) {
+			return false;
+		}
+		inprogress = true
+		coolbutton.classList.add('coolass_button_first');
+		setTimeout(function(){
+		coolbutton.classList.add('coolass_button_bridge1');
+		},500);
+		setTimeout(function(){
+		coolbutton.classList.add('coolass_button_second');
+		},600);
+		setTimeout(function(){
+		coolbutton.classList.add('coolass_button_third');
+		},700);
+		setTimeout(function(){
+		coolbutton.classList.add('coolass_button_final');
+		},1800);
+		setTimeout(function(){
+			coolbutton.classList.remove('coolass_button_final');
+			coolbutton.classList.remove('coolass_button_third');
+			coolbutton.classList.remove('coolass_button_second');
+			coolbutton.classList.remove('coolass_button_bridge1');
+			coolbutton.classList.remove('coolass_button_first');
+			inprogress = false;
+		},3200)
+	};
