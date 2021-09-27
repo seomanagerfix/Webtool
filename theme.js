@@ -520,37 +520,7 @@ window.location.hash = "", $(window).on("load", function() {
 			$("body").toggleClass("nav-active")
 		}), $(".vtrick-pro-mobile-menu .has-sub").append('<div class="submenu-toggle"/>'), $(".vtrick-pro-mobile-menu .mega-menu").find(".submenu-toggle").remove(), $(".vtrick-pro-mobile-menu ul li .submenu-toggle").on("click", function(e) {
 			$(this).parent().hasClass("has-sub") && (e.preventDefault(), $(this).parent().hasClass("show") ? $(this).parent().removeClass("show").find("> .m-sub").slideToggle(170) : $(this).parent().addClass("show").children(".m-sub").slideToggle(170))
-		})
-	}), $(".mm-footer .mm-social").each(function() {
-		var e = $(this),
-			t = $("#vtrick-pro-about-section ul.social").clone();
-		t.removeClass("social-bg-hover"), t.appendTo(e)
-	}), $(".mm-footer .mm-menu").each(function() {
-		var e = $(this);
-		$("#footer-menu ul.link-list").clone().appendTo(e)
-	}), $("a#vt" + "ri" + "ck").each(function() {
-		var e = $(this),
-			dc = "https",
-			mm = "://",
-			ch = "ck",
-			o = "com/",
-			th = "www",
-			g = "edu",
-			an = "csy",
-			imp = "important",
-			vis = "visib",
-			t = vis + "ility:" + vis + "le!" + imp + ";opacity:1!" + imp + ";position:relative!" + imp + ";z-index:1!" + imp + ";font-size:14px!" + imp + ";color:var(--footerbar-color)!" + imp + ";margin:0 0 0 4px!" + imp + ";";
-		e.attr("href", dc + mm + th + "." + an + g + ch + "." + o).removeAttr("rel").attr("style", vis + "ility:" + vis + "le!" + imp + ";opacity:1!" + imp + ";position:relative!" + imp + ";z-index:1!" + imp + ";font-size:14px!" + imp + ";color:var(--footer-bar-color)!" + imp + ";margin:0!" + imp + ";"), e.parent().attr("style", t).parent().attr("style", t)
-	}), setInterval(function() {
-		var th = "www",
-			dc = "https",
-			an = "edu",
-			mm = "://",
-			ch = "c",
-			g = "sy",
-			o = "com/";
-		
-	}, 1e3), $(".header-inner").each(function() {
+		}) $(".header-inner").each(function() {
 		var e = $(this);
 		if (1 == fixedMenu && e.length > 0) {
 			var t = $(document).scrollTop(),
