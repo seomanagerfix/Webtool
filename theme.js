@@ -326,18 +326,7 @@ function fixedSidebarIfy(e) {
 		}))
 	})
 }
-window.location.hash = "", $(window).on("load", function() {
-	target && $("html, body").animate({
-		scrollTop: $("#" + target).offset().top
-	}, 700, "swing", function() {}), $('a[href*="#"]:not(".tocify-wrap a")').on("click", function(e) {
-		let t = this.hash,
-			a = new URL(this.href),
-			o = new URL(window.location.href);
-		a.hash = "", o.hash = "", t && $(t).length && a.href == o.href && (e.preventDefault(), $("html, body").animate({
-			scrollTop: $(t).offset().top - 10
-		}, 750))
-	})
-}), fixedMenu = "undefined" == typeof fixedMenu || fixedMenu, viewAllText = "undefined" != typeof viewAllText ? viewAllText : exportify.viewAll, $("#vtrick-pro-main-nav").menuify(), $("#vtrick-pro-main-nav .widget").addClass("show-menu"), $(".show-search").on("click", function() {
+fixedMenu = "undefined" == typeof fixedMenu || fixedMenu, viewAllText = "undefined" != typeof viewAllText ? viewAllText : exportify.viewAll, $("#vtrick-pro-main-nav").menuify(), $("#vtrick-pro-main-nav .widget").addClass("show-menu"), $(".show-search").on("click", function() {
 	$("body").addClass("search-active"), $("#main-search-wrap").fadeIn(170).find("input").focus()
 }), $(".search-close").on("click", function() {
 	$("body").removeClass("search-active"), $("#main-search-wrap").fadeOut(170).find("input").blur()
