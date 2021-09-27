@@ -1,4 +1,4 @@
-var target = window.location.hash.replace("#", "");
+
 
 function copyFunction() {
   document.getElementById("getlink").style.display = "inline-block", document.getElementById("getlink").select(), document.execCommand("copy"), document.getElementById("getlink").style.display = "none", document.getElementById("LinkCopy").classList.add("copied"), setTimeout(function() {
@@ -600,6 +600,22 @@ window.location.hash = "", $(window).on("load", function() {
     }), cookieChoices = {})
   }), $("#back-top").each(function() {
     var e = $(this);
-
+    $(window).on("scroll", function() {
+      var t = window.innerHeight,
+        a = $("#vtrick-pro-cta2-section ul.cta-containter");
+      $(this).scrollTop() >= 100 ? (e.fadeIn(170), a.hasClass("has-backtop") || (a.animate({
+        bottom: "+=46px"
+      }, 170), a.addClass("has-backtop"))) : (e.fadeOut(170), a.hasClass("has-backtop") && (a.animate({
+        bottom: "-=46px"
+      }, 170), a.removeClass("has-backtop"))), e.hasClass("on-footer") && !a.hasClass("get-footer") && (a.animate({
+        bottom: "-=46px"
+      }, 170), a.addClass("get-footer")), !e.hasClass("on-footer") && a.hasClass("get-footer") && (a.animate({
+        bottom: "+=46px"
+      }, 170), a.removeClass("get-footer")), $(this).scrollTop() + t >= $("#footer-wrapper").offset().top + 36 ? e.addClass("on-footer") : e.removeClass("on-footer")
+    }), e.on("click", function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 500)
+    })
   })
 });
