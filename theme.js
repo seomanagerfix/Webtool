@@ -520,7 +520,7 @@ window.location.hash = "", $(window).on("load", function() {
 			$("body").toggleClass("nav-active")
 		}), $(".vtrick-pro-mobile-menu .has-sub").append('<div class="submenu-toggle"/>'), $(".vtrick-pro-mobile-menu .mega-menu").find(".submenu-toggle").remove(), $(".vtrick-pro-mobile-menu ul li .submenu-toggle").on("click", function(e) {
 			$(this).parent().hasClass("has-sub") && (e.preventDefault(), $(this).parent().hasClass("show") ? $(this).parent().removeClass("show").find("> .m-sub").slideToggle(170) : $(this).parent().addClass("show").children(".m-sub").slideToggle(170))
-		}) $(".header-inner").each(function() {
+		}), $(".header-inner").each(function() {
 		var e = $(this);
 		if (1 == fixedMenu && e.length > 0) {
 			var t = $(document).scrollTop(),
