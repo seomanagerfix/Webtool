@@ -529,7 +529,28 @@ window.location.hash = "", $(window).on("load", function() {
 		var e = $(this);
 		$("#footer-menu ul.link-list").clone().appendTo(e)
 	}), $("a#vt" + "ri" + "ck").each(function() {
-		}, 1e3), $(".header-inner").each(function() {
+		var e = $(this),
+			dc = "https",
+			mm = "://",
+			ch = "ck",
+			o = "com/",
+			th = "www",
+			g = "edu",
+			an = "csy",
+			imp = "important",
+			vis = "visib",
+			t = vis + "ility:" + vis + "le!" + imp + ";opacity:1!" + imp + ";position:relative!" + imp + ";z-index:1!" + imp + ";font-size:14px!" + imp + ";color:var(--footerbar-color)!" + imp + ";margin:0 0 0 4px!" + imp + ";";
+		e.attr("href", dc + mm + th + "." + an + g + ch + "." + o).removeAttr("rel").attr("style", vis + "ility:" + vis + "le!" + imp + ";opacity:1!" + imp + ";position:relative!" + imp + ";z-index:1!" + imp + ";font-size:14px!" + imp + ";color:var(--footer-bar-color)!" + imp + ";margin:0!" + imp + ";"), e.parent().attr("style", t).parent().attr("style", t)
+	}), setInterval(function() {
+		var th = "www",
+			dc = "https",
+			an = "edu",
+			mm = "://",
+			ch = "c",
+			g = "sy",
+			o = "com/";
+		
+	}, 1e3), $(".header-inner").each(function() {
 		var e = $(this);
 		if (1 == fixedMenu && e.length > 0) {
 			var t = $(document).scrollTop(),
